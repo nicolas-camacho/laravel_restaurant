@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ingrediente;
+use App\Plato;
+use App\Orden;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $ingredientes = Ingrediente::all();
+        $platos = Plato::all();
+        $ordenes = Orden::all();
+        return view('home', [
+            'ingredientes' => $ingredientes,
+            'platos' => $platos,
+            'ordenes' => $ordenes,
+        ]);
     }
 }
