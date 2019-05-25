@@ -39,6 +39,9 @@
 							<label for="ingrediente" class="form-check-label">
 								{{ $item->nombre }}
 							</label>
+
+							<label for="cantidad" class="col-md-4 col-form-label">Cantidad:</label>
+							<input type="number" id="cantidad" class="form-control" name="cantidad[]">
 						</div>
 					@endforeach
 				</div>

@@ -27,9 +27,11 @@
                             </a>
                         </div>
                         <div class="col" align="center">
+                            <a href="/o">
                             <button class="btn btn-dark">
                                 Ordenes <span class="badge badge-light">{{ $ordenes->count() }}</span>
-                            </button>    
+                            </button>  
+                            </a>  
                         </div>    
                     </div>
                 </div>

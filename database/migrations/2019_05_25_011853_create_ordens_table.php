@@ -15,7 +15,8 @@ class CreateOrdensTable extends Migration
     {
         Schema::create('ordens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('Estado', 1);
+            $table->char('estado', 1)->default('A');
+            $table->integer('numMesa');
             $table->timestamps();
         });
     }

@@ -14,4 +14,9 @@ class Plato extends Model
     {
         return $this->belongsToMany(Ingrediente::class);
     }
+
+    public function ordens()
+    {
+        return $this->belongsToMany(Orden::class);
+    }
 }

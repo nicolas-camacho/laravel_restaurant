@@ -25,3 +25,7 @@ Route::post('/i/new', 'IngredientesController@store');
 Route::get('/p', 'PlatosController@index');
 Route::get('/p/create', 'PlatosController@create');
 Route::post('/p/new', 'PlatosController@store');
+
+Route::get('/o', 'OrdensController@index');
+Route::get('/o/create', 'OrdensController@create');
+Route::post('/o/new', 'OrdensController@store');

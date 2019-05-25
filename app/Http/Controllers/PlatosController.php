@@ -43,9 +43,12 @@ class PlatosController extends Controller
         
         $id = Plato::latest()->first();
         $newData = request()->ingredientes;
+        $quantities = array_filter(request()->cantidad);
         
-        foreach ($newData as $value) {
-            $id->ingredientes()->attach($value);
+        foreach (array_combine($newData, $quantities) as $value => $quantity) {
+            $id->ingredientes()->attach($value, [
+                'cantidad' => $quantity
+            ]);
         }
 
         return redirect('/p');

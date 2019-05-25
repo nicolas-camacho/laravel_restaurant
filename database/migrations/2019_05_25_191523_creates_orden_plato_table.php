@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatesIngredientePlatoTable extends Migration
+class CreatesOrdenPlatoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatesIngredientePlatoTable extends Migration
      */
     public function up()
     {
-        Schema::create('ingrediente_plato', function (Blueprint $table) {
+        Schema::create('orden_plato', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('ingrediente_id');
             $table->unsignedBigInteger('plato_id');
-            $table->double('cantidad', 8, 2);
+            $table->unsignedBigInteger('orden_id');
+            $table->bigInteger('cantidad');
+            $table->double('valor', 8, 2);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatesIngredientePlatoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingrediente_plato');
+        Schema::dropIfExists('orden_plato');
     }
 }
