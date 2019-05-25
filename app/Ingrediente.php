@@ -11,8 +11,8 @@ class Ingrediente extends Model
         'nombre', 'proveedor',
     ];
 
-    public function plato_ingredientes()
+    public function platos()
     {
-        return $this->hasMany(PlatoIngrediente::class);
+        return $this->belongsToMany(Plato::class);
     }
 }

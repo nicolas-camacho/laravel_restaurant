@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/i', 'IngredientesController@index');
 Route::get('/i/create', 'IngredientesController@create');
 Route::post('/i/new', 'IngredientesController@store');
+
+Route::get('/p', 'PlatosController@index');
+Route::get('/p/create', 'PlatosController@create');
+Route::post('/p/new', 'PlatosController@store');

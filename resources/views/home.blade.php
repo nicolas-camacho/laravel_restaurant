@@ -20,9 +20,11 @@
                             </a>
                         </div>
                         <div class="col" align="center">
-                            <button class="btn btn-success">
-                                Platos <span class="badge badge-light">{{ $platos->count() }}</span>
-                            </button>
+                            <a href="/p">
+                                <button class="btn btn-success">
+                                    Platos <span class="badge badge-light">{{ $platos->count() }}</span>
+                                </button>
+                            </a>
                         </div>
                         <div class="col" align="center">
                             <button class="btn btn-dark">

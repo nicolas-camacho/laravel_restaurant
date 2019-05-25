@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plato extends Model
 {
-    public function plato_ingredientes()
-    {
-        return $this->hasMany(PlatoIngrediente::class);
-    }
+    protected $fillable = [
+        'nombre', 'valor',
+    ];
 
-    public function orden_platos()
+    public function ingredientes()
     {
-        return $this->hasMany(OrdenPlato::class);
+        return $this->belongsToMany(Ingrediente::class);
     }
 }
