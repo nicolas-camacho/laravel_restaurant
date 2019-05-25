@@ -13,9 +13,11 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col" align="center">
-                            <button class="btn btn-primary">
-                                Ingredientes <span class="badge badge-light">{{ $ingredientes->count() }}</span>
-                            </button>
+                            <a href="/i">
+                                <button class="btn btn-primary">
+                                    Ingredientes <span class="badge badge-light">{{ $ingredientes->count() }}</span>
+                                </button>
+                            </a>
                         </div>
                         <div class="col" align="center">
                             <button class="btn btn-success">
