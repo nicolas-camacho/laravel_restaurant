@@ -15,7 +15,7 @@ class OrdensController extends Controller
 
     public function index()
     {
-        $ordens = Orden::all();
+        $ordens = Orden::all()->where('estado', '=', 'A');
         return view('ordens.index', [
             'ordens' => $ordens,
         ]);
@@ -45,15 +45,16 @@ class OrdensController extends Controller
         $valor = 0;
 
         foreach (array_combine($newData, $quantities) as $value => $quantity) {
-           $valor = $valor + (Plato::find($value)->valor * $quantity);
-        }
-
-        foreach (array_combine($newData, $quantities) as $value => $quantity) {
+            $valor = 0;
+            $valor += (Plato::find($value)->valor * $quantity);
             $id->platos()->attach($value, [
                 'cantidad' => $quantity,
-                'valor' => $valor
+                'valor' => $valor,
             ]);
         }
+        
+        return redirect('/o');
     }
+
 }
 

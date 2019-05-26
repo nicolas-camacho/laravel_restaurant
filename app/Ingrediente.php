@@ -13,6 +13,6 @@ class Ingrediente extends Model
 
     public function platos()
     {
-        return $this->belongsToMany(Plato::class);
+        return $this->belongsToMany(Plato::class)->withPivot('cantidad');
     }
 }

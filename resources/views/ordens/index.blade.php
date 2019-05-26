@@ -21,7 +21,7 @@
 						@foreach ($ordens as $item)
 							<li class="list-group-item">
 								<div class="d-flex w-100 justify-content-between">
-									<h5>{{ $item->id }}</h5>
+									<h5>Mesa: {{ $item->numMesa }}</h5>
 									<div class="btn-group" role="group">
 										<a href="#">
 											<button class="btn btn-primary">
@@ -30,18 +30,16 @@
 										</a>
 										<a href="#">
 											<button class="btn btn-danger">
-												<i class="far fa-trash-alt"></i>
+												<i class="far fa-window-close"></i>
 											</button>
 										</a>
 									</div>
 								</div>
 								<small>Platos:
 									@foreach ($item->platos as $value)
-											{{ $value->nombre }}, 
+											{{ $value->nombre }} ({{ $value->pivot->cantidad }}) : 
+											{{ $value->pivot->valor }}, 
 									@endforeach
-								</small>
-								<small>
-									{{ $item->valor }}
 								</small>
 							</li>
 						@endforeach

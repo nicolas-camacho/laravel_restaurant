@@ -28,11 +28,6 @@
 												<i class="fas fa-edit"></i>
 											</button>
 										</a>
-										<a href="#">
-											<button class="btn btn-danger">
-												<i class="far fa-trash-alt"></i>
-											</button>
-										</a>
 									</div>
 								</div>
 								<small>Proveedor: {{ $item->proveedor }}</small>

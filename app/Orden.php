@@ -12,6 +12,6 @@ class Orden extends Model
 
 		public function platos()
 		{
-			return $this->belongsToMany(Orden::class);
+			return $this->belongsToMany(Plato::class)->withPivot('cantidad', 'valor');
 		}
 }

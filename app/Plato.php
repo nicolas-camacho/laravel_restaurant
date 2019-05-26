@@ -12,11 +12,11 @@ class Plato extends Model
 
     public function ingredientes()
     {
-        return $this->belongsToMany(Ingrediente::class);
+        return $this->belongsToMany(Ingrediente::class)->withPivot('cantidad');
     }
 
     public function ordens()
     {
-        return $this->belongsToMany(Orden::class);
+        return $this->belongsToMany(Orden::class)->withPivot('cantidad', 'valor');
     }
 }
