@@ -23,7 +23,7 @@
 								<div class="d-flex w-100 justify-content-between">
 									<h5>Mesa: {{ $item->numMesa }}</h5>
 									<div class="btn-group" role="group">
-										<a href="#">
+										<a href="/o/{{ $item->id }}/edit">
 											<button class="btn btn-primary">
 												<i class="fas fa-edit"></i>
 											</button>

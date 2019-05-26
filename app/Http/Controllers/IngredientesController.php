@@ -13,6 +13,14 @@ class IngredientesController extends Controller
         $this->middleware('auth');
     }
 
+    protected function validator(Request $data)
+    {
+        return $data->validate([
+            'nombre' => ['required', 'unique:ingredientes,nombre'],
+            'proveedor' => 'required',
+        ]);
+    }
+
     public function index()
     {
         $ingredientes = Ingrediente::all();
@@ -26,12 +34,9 @@ class IngredientesController extends Controller
         return view('ingredientes.create');
     }
 
-    public function store()
+    public function store(Request $data)
     {
-        $data = request()->validate([
-            'nombre' => 'required',
-            'proveedor' => 'required',
-        ]);
+        $this->validator($data);
 
         Ingrediente::create([
             'nombre' => $data['nombre'],
@@ -39,5 +44,23 @@ class IngredientesController extends Controller
         ]);
 
         return redirect('/i');
+    }
+
+    public function edit(Ingrediente $ingrediente)
+    {
+        return view('ingredientes.edit', compact('ingrediente'));
+    }
+
+    public function update(Ingrediente $ingrediente)
+    {
+        $data = request()->validate([
+            'nombre' => 'required',
+            'proveedor' => 'required',
+        ]);
+        
+        $ingrediente->update($data);
+
+        return redirect("/i");
+        
     }
 }
