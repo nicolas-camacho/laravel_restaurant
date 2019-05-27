@@ -28,9 +28,9 @@
 												<i class="fas fa-edit"></i>
 											</button>
 										</a>
-										<a href="#">
+										<a href="/o/{{ $item->id }}">
 											<button class="btn btn-danger">
-												<i class="far fa-window-close"></i>
+												<i class="far fa-eye"></i>
 											</button>
 										</a>
 									</div>

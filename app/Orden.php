@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orden extends Model
 {
 		protected $fillable = [
-			'numMesa',
+			'numMesa', 'estado',
 		];
 
 		public function platos()

@@ -12,9 +12,8 @@
 				</div>
 				<div class="form-group row">
 					<label for="numMesa" class="col-md-4 col-form-label">Numero de mesa</label>
-
 					<input type="number" id="numMesa" class="form-control @error('numMesa') is-invalid @enderror" name="numMesa" value="{{ old('numMesa') }}" required autocomplete="numMesa" autofocus>
-
+					<strong>{{ $message }}</strong>
 					@error('numMesa')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>

@@ -35,3 +35,5 @@ Route::get('/o/create', 'OrdensController@create');
 Route::post('/o/new', 'OrdensController@store');
 Route::get('/o/{orden}/edit', 'OrdensController@edit')->name('orden.edit');
 Route::patch('/o/{orden}', 'OrdensController@update')->name('orden.update');
+Route::get('/o/{orden}', 'OrdensController@show');
+Route::patch('/o/{orden}/cancel', 'OrdensController@payment')->name('orden.payment');
